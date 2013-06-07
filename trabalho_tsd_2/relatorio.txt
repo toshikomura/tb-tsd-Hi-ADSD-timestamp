@@ -1,0 +1,150 @@
+Trabalho de Tópicos em Sistemas Distribuidos
+
+Aluno: Gustavo Toshi Komura
+GRR: GRR20102342
+
+Tema: Implementação do algoritmo Hi-ADSD, com uma pequena modificação, ao invés de testar 
+um cluster por rodada é feito os log N testes em uma única rodada.
+
+Procedimentos:
+
+1 - Incialmente foi reaproveitado o algoritmo visto em sala de aula. Juntamente com as 
+modificações requisitadas em laboratório, este algoritmo se tornou o Adaptive-SD.
+
+1.1 - Este procedimento teve a inclusão dos arquivos "smlp.h", "smpl.c", "makefile", que 
+estão na página da disciplina, além do arquivo "temp.c" que foi sendo construido ao se fazer os 
+exercicios propostos.
+
+2 - Como sugerido pela especificação, foi reaproveitado o arquvio "cisj.c", que também 
+está na página da disciplina. Neste arquvio foi feita uma pequena modificação, que consistiu 
+na substituição da função "main" por "cisj". Além deste arquvio, foi criado um ".h" para 
+incluir as funções do "cisj.c" no programa principal.
+
+3 - Com relação ao desemvolvimento no arquvio temp.c:
+
+3.1 Possui as seguintes funções que:
+
+Inicializacao_do_Termina_Diagnostico_Nodos: Seta para 1 o vetor de termino de
+diagnostico.
+
+Atualizacao_do_Inicia_Diagnostico_Nodos: Seta para o estado atual dos nodos, o vetor de
+inicio de diagnostico.
+
+Atualizacao_do_Termina_Diagnostico_Nodos: Seta para o estado atual dos nodos, o vetor de
+termino de diagnostico
+
+Calcula_Latencia: Calcula a latencia e a quantidade de testes que os nodos fizeram durante
+o diagnostico.
+
+Checa_se_Terminou_o_Diagnostico: Verifica se um diagnostico terminou.
+
+Checa_se_Iniciou_o_Diagnostico: Verifica se um diagnostico iniciou.
+
+Iniciando_Simulacao: Prepara o programa para o inicio da simulação.
+
+Imprime_Log: Imprime o log.
+
+Algoritmo_de_Testes: Neste caso o algoritmo executado é Hi-ADSD.
+
+Verifica_Diagnostico: Verifica se um diagnostico foi iniciado e terminado, em caso afirmativo
+ele chama as funções para calcular a latencia.
+
+3.2 - Incialmente era necessário saber a quantidade de clusters, que seria necessário a partir 
+da entrada "n", que é a quantidade de nodos. Para isso foi incluido o seguinte código
+"max_cluster =(int) ceil( log2(n) );", onde se calcula o teto de lg (N), que é quantidade 
+de cluster necessário para uma dada quantidade "N" de nodos.
+
+3.3 - Foram incluidas mais 5 variáveis na estrutura "tnodo":
+
+    3.3.1 - "int *testedup;" vetor que possui os resultados dos testes.
+            Incialmente este vetor é totalmente setado com -1, que indica que ele não sabe qual 
+            o estado de nodo "i", ele só seta como 0 o seu própio indicador.
+            Esse vetor é válido para todos os nodos.
+
+    3.3.2 - "int cluster;" informa qual o cluster que o nodo está em um determinado momento.
+            Inicialmente esta variável é setada com o valor 1, que indica que o nodo esta no 
+            cluster 1.
+            Esse valor é válido para todos os nodos.
+
+    3.3.3 - "int *nodos_testados" vetor que possui os nodos testados pelo que possui 
+            esse vetor.
+
+    3.3.4 - "int *latencia" vetor que possui as latencias com relação a cada nodo.
+
+    3.3.5 - "qtd_testes" informa a quantidade de testes que esse nodo fez.
+
+3.4 - A maioria das modificação foram feitas no "switch(event)", mais especificamento no 
+"case test:":
+
+    3.4.1 - Já sabendo em qual cluster o nodo "i" estaria, foram necessários saber quais os nodos 
+    que ele teria que testar, e isso foi obtido recorrendo a função existente no "cisj.c" com o 
+    seguinte código "nodes = cis(token, nodo[token].cluster);".
+            "nodes" é o vetor que contém os nodos que estão no cluster do nodo "i".
+            "token" é o nodo "i".
+            "nodo[token].cluster" é o cluster que o nodo "i" está em determinado memento.
+
+    3.4.2 - Sabendo os nodos que estão no cluster, incia-se as buscas por um nodo sem falha 
+    no vetor "nodes".
+        3.4.2.1 - Se todos os nodos estiverem falhos no cluster, então o nodo "i" testou todos, 
+                portanto ele sabe o estado de todos eles no cluster atual, e já tem todos os nodos 
+                atualizados.
+        3.4.2.2 - Caso ele encontre um nodo sem falha no cluster, o nodo "i" pega informações dos 
+                nodos que ele ainda não possui informação do nodo sem falha que ele acabou de testar.
+                Para pegar estas informações ele, o nodo "i", não deve atualizar os nodos que estavam 
+                nos seus clusters anteriores, juntamente com os nodos que ele acabou de testar e 
+                ele mesmo.
+
+3.5 - Na impressão do log é feita duas verficações:
+
+    3.5.1 - "if (num_cluster != nodo[token].cluster)". Esta checagem é feita somente para imprimir
+            em qual cluster que o teste está sendo executado.
+            "num_cluster" checa se os nodos mudaram de cluster ou não.
+            "nodo[token].cluster" é o cluster que o nodo esta em um determinado momento.
+
+    3.5.2 - "if (nodes->nodes[j] < n)". Esta checagem é necessária, pois em casos que o número 
+            de nodos existentes não for potência de dois, um nodo pode estar testando um nodo 
+            que não existe. Por exemplo: Um sistema com 7 nodos, o nodo 3 no cluster 3, iria 
+            testar o nodo 7, no entanto o nodo 7 não existe.
+
+3.6 - Determinando próximo escalonamento:
+
+    3.6.1 - "if ( nodo[token].cluster < max_cluster )". Se o nodo ainda não chegou no último 
+            cluster ele é escalonado com o tempo zero, pois o teste do próximo cluster deve ser 
+            feito nesta mesma rodada.
+    3.6.2 - Caso esteja no último cluster a ser testado, ele é escalonado para um tempo que não 
+            seja zero, pois ele não pode executar o teste do primeiro cluster nesta mesma rodada.
+
+4 - LOGs:
+
+    Os logs da execução do programa estão na página, logo acima do relátorio.
+    Na resposta de a) foi considerado a latência, como a quantidade de rodadas que todos os nodos
+    demoravam para descobrir o novo evento.
+    Na resposta de b) foi considerado a quantidade de testes 
+    incluindo os testes em nodos com falha, ou seja, no caso do nodo 1 testar 3 com falha e depois 
+    testar o nodo 2 sem falha, foi considerado como 2 testes.
+
+5 - Observações Gerais:
+
+* Para quantidade de nodos diferente de potências de 2, para a quantidade de clusters
+foi determinado o teto de lg N, sendo N a quantidade de nodos para a simulação.
+
+( Observação não cabe no contexto do algoritmo, pois não podem ocorrer
+mudanças durante um diagnostico )
+* Continuando no assunto da quantidade de nodos diferentes potência de 2, houve
+um problema com o calculo da latência, pois por exemplo no caso de existirem
+somente 3 nodos, neste caso no cluster 1, 0 testa 1 e 1 testa 0, o 2 não testa
+ninguém pois o 3 não existe, no cluster 2 0 testa 2 e 2 testa 0, 1 não testa
+ninguém, pois ele só testaria o 2 se o 0 estivesse falho. Perceba que se
+o nodo 2 tivesse falhado o 1 só iria desocobrir quando testar o nodo na
+próxima rodada de testes, no entanto se ocorrer alguma mudança entre as
+duas rodadas de testes no nodo 2, e assim essas mudanças irem
+sucessivamente ocorrendo, o sistema nunca irá conseguir terminar o diagnostico.
+
+* Para a incialização do vetor testedup, foi determinado que todoas as posições recebem
+valor -1, que indica que não se sabe o estado do nodo, somente para sua própia posição
+que é setado o valor 0, que indica que o nodo está sem falha.
+
+* Para garantir que todos os testes de todos os cluster fossem executados em uma única
+rodada, foi utlizada a seguinte condição, enquanto não chegar no último cluster
+o escalonamento do nodo era de zero e ia para o próximo cluster, caso contrário, fosse
+o último cluster, o nodo era escalonado para 30 e voltava ao cluster 1.

@@ -1,0 +1,138 @@
+
+<<<<<<<<<<<<<<<<<<<START SIMULATION>>>>>>>>>>>>>>>>>>>
+
+CLUSTER 1
+sou o nodo 0 no tempo  30.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [-1] 
+
+sou o nodo 1 no tempo  30.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [-1] 
+
+sou o nodo 2 no tempo  30.0 
+testei os nodo(s): 
+timestamp:  [-1]  [-1]  [0] 
+
+CLUSTER 2
+sou o nodo 0 no tempo  30.0 
+testei os nodo(s):  2 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 1 no tempo  30.0 
+testei os nodo(s): 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 2 no tempo  30.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [0] 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+O nodo 0 falha no tempo  40.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+O nodo 1 falha no tempo  40.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+O nodo 2 falha no tempo  40.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+o nodo 0 reparou no tempo  50.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+o nodo 1 reparou no tempo  50.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+o nodo 2 reparou no tempo  50.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+CLUSTER 1
+sou o nodo 0 no tempo  60.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 1 no tempo  60.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 2 no tempo  60.0 
+testei os nodo(s): 
+timestamp:  [0]  [0]  [0] 
+
+CLUSTER 2
+sou o nodo 0 no tempo  60.0 
+testei os nodo(s):  2 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 1 no tempo  60.0 
+testei os nodo(s): 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 2 no tempo  60.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [0] 
+
+CLUSTER 1
+sou o nodo 0 no tempo  80.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 1 no tempo  80.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 2 no tempo  80.0 
+testei os nodo(s): 
+timestamp:  [0]  [0]  [0] 
+
+CLUSTER 2
+sou o nodo 0 no tempo  80.0 
+testei os nodo(s):  2 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 1 no tempo  80.0 
+testei os nodo(s): 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 2 no tempo  80.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [0] 
+
+CLUSTER 1
+sou o nodo 0 no tempo  90.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 1 no tempo  90.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 2 no tempo  90.0 
+testei os nodo(s): 
+timestamp:  [0]  [0]  [0] 
+
+CLUSTER 2
+sou o nodo 0 no tempo  90.0 
+testei os nodo(s):  2 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 1 no tempo  90.0 
+testei os nodo(s): 
+timestamp:  [0]  [0]  [0] 
+
+sou o nodo 2 no tempo  90.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [0] 
+
+CLUSTER 1
+sou o nodo 0 no tempo 110.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [0] 
+
+<<<<<<<<<<<<<<<<<<<FINISH SIMULATION>>>>>>>>>>>>>>>>>>>
+

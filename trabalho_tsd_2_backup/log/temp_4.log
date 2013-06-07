@@ -1,0 +1,112 @@
+
+<<<<<<<<<<<<<<<<<<<START SIMULATION>>>>>>>>>>>>>>>>>>>
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+O nodo 0 falha no tempo  10.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+O nodo 2 falha no tempo  10.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+CLUSTER 1
+sou o nodo 1 no tempo  30.0 
+testei os nodo(s):  0 
+timestamp:  [1]  [0]  [-1]  [-1] 
+
+sou o nodo 3 no tempo  30.0 
+testei os nodo(s):  2 
+timestamp:  [-1]  [-1]  [1]  [0] 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+o nodo 0 reparou no tempo  30.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+o nodo 2 reparou no tempo  30.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+CLUSTER 2
+sou o nodo 1 no tempo  30.0 
+testei os nodo(s):  3 
+timestamp:  [1]  [0]  [1]  [0] 
+
+sou o nodo 3 no tempo  30.0 
+testei os nodo(s):  1 
+timestamp:  [1]  [0]  [1]  [0] 
+
+CLUSTER 1
+sou o nodo 0 no tempo  60.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [1]  [0] 
+
+sou o nodo 2 no tempo  60.0 
+testei os nodo(s):  3 
+timestamp:  [1]  [0]  [0]  [0] 
+
+sou o nodo 1 no tempo  60.0 
+testei os nodo(s):  0 
+timestamp:  [2]  [0]  [1]  [0] 
+
+sou o nodo 3 no tempo  60.0 
+testei os nodo(s):  2 
+timestamp:  [1]  [0]  [2]  [0] 
+
+CLUSTER 2
+sou o nodo 0 no tempo  60.0 
+testei os nodo(s):  2 
+timestamp:  [0]  [0]  [2]  [0] 
+
+sou o nodo 2 no tempo  60.0 
+testei os nodo(s):  0 
+timestamp:  [2]  [0]  [0]  [0] 
+
+sou o nodo 1 no tempo  60.0 
+testei os nodo(s):  3 
+timestamp:  [2]  [0]  [2]  [0] 
+
+sou o nodo 3 no tempo  60.0 
+testei os nodo(s):  1 
+timestamp:  [2]  [0]  [2]  [0] 
+
+CLUSTER 1
+sou o nodo 0 no tempo  90.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [2]  [0] 
+
+sou o nodo 2 no tempo  90.0 
+testei os nodo(s):  3 
+timestamp:  [2]  [0]  [0]  [0] 
+
+sou o nodo 1 no tempo  90.0 
+testei os nodo(s):  0 
+timestamp:  [2]  [0]  [2]  [0] 
+
+sou o nodo 3 no tempo  90.0 
+testei os nodo(s):  2 
+timestamp:  [2]  [0]  [2]  [0] 
+
+CLUSTER 2
+sou o nodo 0 no tempo  90.0 
+testei os nodo(s):  2 
+timestamp:  [0]  [0]  [2]  [0] 
+
+sou o nodo 2 no tempo  90.0 
+testei os nodo(s):  0 
+timestamp:  [2]  [0]  [0]  [0] 
+
+sou o nodo 1 no tempo  90.0 
+testei os nodo(s):  3 
+timestamp:  [2]  [0]  [2]  [0] 
+
+sou o nodo 3 no tempo  90.0 
+testei os nodo(s):  1 
+timestamp:  [2]  [0]  [2]  [0] 
+
+CLUSTER 1
+sou o nodo 0 no tempo 120.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [2]  [0] 
+
+<<<<<<<<<<<<<<<<<<<FINISH SIMULATION>>>>>>>>>>>>>>>>>>>
+

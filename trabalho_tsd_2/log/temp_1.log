@@ -1,0 +1,142 @@
+
+<<<<<<<<<<<<<<<<<<<START SIMULATION>>>>>>>>>>>>>>>>>>>
+
+CLUSTER 1
+sou o nodo 0 no tempo  30.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [-1]  [-1] 
+
+incia 1
+sou o nodo 1 no tempo  30.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [-1]  [-1] 
+
+incia 1
+sou o nodo 2 no tempo  30.0 
+testei os nodo(s):  3 
+timestamp:  [-1]  [-1]  [0]  [0] 
+
+incia 1
+sou o nodo 3 no tempo  30.0 
+testei os nodo(s):  2 
+timestamp:  [-1]  [-1]  [0]  [0] 
+
+incia 1
+CLUSTER 2
+sou o nodo 0 no tempo  30.0 
+testei os nodo(s):  2 
+timestamp:  [0]  [0]  [0]  [0] 
+
+incia 1
+sou o nodo 1 no tempo  30.0 
+testei os nodo(s):  3 
+timestamp:  [0]  [0]  [0]  [0] 
+
+incia 1
+sou o nodo 2 no tempo  30.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [0]  [0] 
+
+incia 1
+sou o nodo 3 no tempo  30.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [0]  [0] 
+
+incia 1
+latencia_maior = 2 latencia_testes 8
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+O nodo 2 falha no tempo  40.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+CLUSTER 1
+sou o nodo 0 no tempo  60.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [0]  [0] 
+
+incia 1
+sou o nodo 1 no tempo  60.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [0]  [0] 
+
+incia 1
+sou o nodo 3 no tempo  60.0 
+testei os nodo(s):  2 
+timestamp:  [0]  [0]  [1]  [0] 
+
+incia 1
+CLUSTER 2
+sou o nodo 0 no tempo  60.0 
+testei os nodo(s):  2 
+timestamp:  [0]  [0]  [1]  [0] 
+
+incia 1
+sou o nodo 1 no tempo  60.0 
+testei os nodo(s):  3 
+timestamp:  [0]  [0]  [1]  [0] 
+
+incia 1
+latencia_maior = 2 latencia_testes 5
+
+sou o nodo 3 no tempo  60.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [1]  [0] 
+
+incia 0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+o nodo 2 reparou no tempo  70.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+CLUSTER 1
+sou o nodo 0 no tempo  90.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [1]  [0] 
+
+incia 1
+sou o nodo 1 no tempo  90.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [1]  [0] 
+
+incia 1
+sou o nodo 3 no tempo  90.0 
+testei os nodo(s):  2 
+timestamp:  [0]  [0]  [2]  [0] 
+
+incia 1
+CLUSTER 2
+sou o nodo 0 no tempo  90.0 
+testei os nodo(s):  2 
+timestamp:  [0]  [0]  [2]  [0] 
+
+incia 1
+sou o nodo 1 no tempo  90.0 
+testei os nodo(s):  3 
+timestamp:  [0]  [0]  [2]  [0] 
+
+incia 1
+latencia_maior = 2 latencia_testes 6
+
+sou o nodo 3 no tempo  90.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [2]  [0] 
+
+incia 0
+CLUSTER 1
+sou o nodo 2 no tempo 100.0 
+testei os nodo(s):  3 
+timestamp:  [0]  [0]  [0]  [0] 
+
+incia 0
+<<<<<<<<<<<<<<<<<<<FINISH SIMULATION>>>>>>>>>>>>>>>>>>>
+
+<<<<<<<<<<<<<<INICIO LATENCIA E QTD TESTES>>>>>>>>>>>>>>
+
+Considerando a sequencia de eventos de diagnosticos as
+respectivas latencia e quantidade de testes foram:
+
+latencia 2 qtd_testes 8
+latencia 2 qtd_testes 5
+latencia 2 qtd_testes 6
+
+<<<<<<<<<<<<<<<FIM LATENCIA E QTD TESTES>>>>>>>>>>>>>>>
+

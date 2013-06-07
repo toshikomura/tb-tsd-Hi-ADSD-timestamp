@@ -1,0 +1,191 @@
+
+<<<<<<<<<<<<<<<<<<<START SIMULATION>>>>>>>>>>>>>>>>>>>
+
+CLUSTER 1
+sou o nodo 0 no tempo  30.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [-1]  [-1]  [-1]  [-1]  [-1] 
+
+sou o nodo 1 no tempo  30.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [-1]  [-1]  [-1]  [-1]  [-1] 
+
+sou o nodo 2 no tempo  30.0 
+testei os nodo(s):  3 
+timestamp:  [-1]  [-1]  [0]  [0]  [-1]  [-1]  [-1] 
+
+sou o nodo 3 no tempo  30.0 
+testei os nodo(s):  2 
+timestamp:  [-1]  [-1]  [0]  [0]  [-1]  [-1]  [-1] 
+
+sou o nodo 4 no tempo  30.0 
+testei os nodo(s):  5 
+timestamp:  [-1]  [-1]  [-1]  [-1]  [0]  [0]  [-1] 
+
+sou o nodo 5 no tempo  30.0 
+testei os nodo(s):  4 
+timestamp:  [-1]  [-1]  [-1]  [-1]  [0]  [0]  [-1] 
+
+sou o nodo 6 no tempo  30.0 
+testei os nodo(s): 
+timestamp:  [-1]  [-1]  [-1]  [-1]  [-1]  [-1]  [0] 
+
+CLUSTER 2
+sou o nodo 0 no tempo  30.0 
+testei os nodo(s):  2 
+timestamp:  [0]  [0]  [0]  [0]  [-1]  [-1]  [-1] 
+
+sou o nodo 1 no tempo  30.0 
+testei os nodo(s):  3 
+timestamp:  [0]  [0]  [0]  [0]  [-1]  [-1]  [-1] 
+
+sou o nodo 2 no tempo  30.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [0]  [0]  [-1]  [-1]  [-1] 
+
+sou o nodo 3 no tempo  30.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [0]  [0]  [-1]  [-1]  [-1] 
+
+sou o nodo 4 no tempo  30.0 
+testei os nodo(s):  6 
+timestamp:  [-1]  [-1]  [-1]  [-1]  [0]  [0]  [0] 
+
+sou o nodo 5 no tempo  30.0 
+testei os nodo(s): 
+timestamp:  [-1]  [-1]  [-1]  [-1]  [0]  [0]  [0] 
+
+sou o nodo 6 no tempo  30.0 
+testei os nodo(s):  4 
+timestamp:  [-1]  [-1]  [-1]  [-1]  [0]  [0]  [0] 
+
+CLUSTER 3
+sou o nodo 0 no tempo  30.0 
+testei os nodo(s):  4 
+timestamp:  [0]  [0]  [0]  [0]  [0]  [0]  [0] 
+
+sou o nodo 1 no tempo  30.0 
+testei os nodo(s):  5 
+timestamp:  [0]  [0]  [0]  [0]  [0]  [0]  [0] 
+
+sou o nodo 2 no tempo  30.0 
+testei os nodo(s):  6 
+timestamp:  [0]  [0]  [0]  [0]  [0]  [0]  [0] 
+
+sou o nodo 3 no tempo  30.0 
+testei os nodo(s): 
+timestamp:  [0]  [0]  [0]  [0]  [0]  [0]  [0] 
+
+sou o nodo 4 no tempo  30.0 
+testei os nodo(s):  0 
+timestamp:  [0]  [0]  [0]  [0]  [0]  [0]  [0] 
+
+sou o nodo 5 no tempo  30.0 
+testei os nodo(s):  1 
+timestamp:  [0]  [0]  [0]  [0]  [0]  [0]  [0] 
+
+sou o nodo 6 no tempo  30.0 
+testei os nodo(s):  2 
+timestamp:  [0]  [0]  [0]  [0]  [0]  [0]  [0] 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+O nodo 0 falha no tempo  60.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+O nodo 3 falha no tempo  60.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+O nodo 4 falha no tempo  60.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+O nodo 6 falha no tempo  60.0 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+CLUSTER 1
+sou o nodo 1 no tempo  60.0 
+testei os nodo(s):  0 
+timestamp:  [1]  [0]  [0]  [0]  [0]  [0]  [0] 
+
+sou o nodo 2 no tempo  60.0 
+testei os nodo(s):  3 
+timestamp:  [0]  [0]  [0]  [1]  [0]  [0]  [0] 
+
+sou o nodo 5 no tempo  60.0 
+testei os nodo(s):  4 
+timestamp:  [0]  [0]  [0]  [0]  [1]  [0]  [0] 
+
+CLUSTER 2
+sou o nodo 1 no tempo  60.0 
+testei os nodo(s):  3 
+timestamp:  [1]  [0]  [0]  [1]  [0]  [0]  [0] 
+
+sou o nodo 2 no tempo  60.0 
+testei os nodo(s):  0 
+timestamp:  [1]  [0]  [0]  [1]  [0]  [0]  [0] 
+
+sou o nodo 5 no tempo  60.0 
+testei os nodo(s): 
+timestamp:  [0]  [0]  [0]  [0]  [1]  [0]  [0] 
+
+CLUSTER 3
+sou o nodo 1 no tempo  60.0 
+testei os nodo(s):  5 
+timestamp:  [1]  [0]  [0]  [1]  [1]  [0]  [0] 
+
+sou o nodo 2 no tempo  60.0 
+testei os nodo(s):  6 
+timestamp:  [1]  [0]  [0]  [1]  [0]  [0]  [1] 
+
+sou o nodo 5 no tempo  60.0 
+testei os nodo(s):  1 
+timestamp:  [1]  [0]  [0]  [1]  [1]  [0]  [0] 
+
+CLUSTER 1
+sou o nodo 1 no tempo  90.0 
+testei os nodo(s):  0 
+timestamp:  [1]  [0]  [0]  [1]  [1]  [0]  [0] 
+
+sou o nodo 2 no tempo  90.0 
+testei os nodo(s):  3 
+timestamp:  [1]  [0]  [0]  [1]  [0]  [0]  [1] 
+
+sou o nodo 5 no tempo  90.0 
+testei os nodo(s):  4 
+timestamp:  [1]  [0]  [0]  [1]  [1]  [0]  [0] 
+
+CLUSTER 2
+sou o nodo 1 no tempo  90.0 
+testei os nodo(s):  3 
+timestamp:  [1]  [0]  [0]  [1]  [1]  [0]  [0] 
+
+sou o nodo 2 no tempo  90.0 
+testei os nodo(s):  0 
+timestamp:  [1]  [0]  [0]  [1]  [0]  [0]  [1] 
+
+sou o nodo 5 no tempo  90.0 
+testei os nodo(s): 
+timestamp:  [1]  [0]  [0]  [1]  [1]  [0]  [0] 
+
+CLUSTER 3
+sou o nodo 1 no tempo  90.0 
+testei os nodo(s):  5 
+timestamp:  [1]  [0]  [0]  [1]  [1]  [0]  [0] 
+
+sou o nodo 2 no tempo  90.0 
+testei os nodo(s):  6 
+timestamp:  [1]  [0]  [0]  [1]  [0]  [0]  [1] 
+
+sou o nodo 5 no tempo  90.0 
+testei os nodo(s):  1 
+timestamp:  [1]  [0]  [0]  [1]  [1]  [0]  [0] 
+
+CLUSTER 1
+sou o nodo 1 no tempo 120.0 
+testei os nodo(s):  0 
+timestamp:  [1]  [0]  [0]  [1]  [1]  [0]  [0] 
+
+<<<<<<<<<<<<<<<<<<<FINISH SIMULATION>>>>>>>>>>>>>>>>>>>
+

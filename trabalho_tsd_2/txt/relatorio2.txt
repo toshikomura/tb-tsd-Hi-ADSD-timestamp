@@ -1,0 +1,137 @@
+Trabalho de Tópicos em Sistemas Distribuidos
+
+Aluno: Gustavo Toshi Komura
+GRR: GRR20102342
+
+Tema: Implementação de uma nova estratégia para o algoritmo Hi-ADSD, que inclui algumas modificações
+do algoritmo Hi-ADSD, ao invés de possuirmos um vetor de testdup, temos um vetor de timestamp.
+
+Procedimentos:
+
+1 - Incialmente o código do primeiro trabalho foi reaproveitado.
+
+(copia do primeiro relatório)
+    1.1 - Incialmente foi reaproveitado o algoritmo visto em sala de aula. Juntamente com as
+    modificações requisitadas em laboratório, este algoritmo se tornou o Adaptive-SD.
+
+        1.1.1 - Este procedimento teve a inclusão dos arquivos "smlp.h", "smpl.c", "makefile", que
+        estão na página da disciplina, além do arquivo "temp.c" que foi sendo construido ao se fazer os
+        exercicios propostos.
+
+    1.2 - Como sugerido pela especificação, foi reaproveitado o arquvio "cisj.c", que também
+    está na página da disciplina. Neste arquvio foi feita uma pequena modificação, que consistiu
+    na substituição da função "main" por "cisj". Além deste arquvio, foi criado um ".h" para
+    incluir as funções do "cisj.c" no programa principal.
+
+    1.3 - Com relação ao desemvolvimento no arquvio temp.c:
+
+(considere que boa parte do relatório do trabalho 1 esteja incluso, aqui ele será omitido, pois
+ocuparia muito espaço)
+
+        1.3.1 - Boa parte do arquivo temp.c foi reaproveitado, no entanto forma feitas várias
+        modificações dentro do case, principalmente no teste.
+
+2 - Modificações na parte de teste:
+
+    2.1 - Toda vez que entramos em um teste, o nodo que esta na vez (i), deve pegar todos os
+    nodos que estão no outro cluster, atráves do C i,s e verificar para cada um deles (j),
+    qual é o primeiro elemento da lista retornada pelo C j,s. Se o primeiro elemento da lista
+    for ele (i), enntão ele deve testar este nodo pertencentea C i,s.
+
+        2.1.1 - Um detalhe importante que cabe neste momento, é com relação a quantidade de
+        nodos fornecidas na entrada padrão, pois quando o número de nodos é equivalente a 2
+        elevado a i, com 1 <= i <= infinito, não existe nenhum problema, no entanto ao
+        fornecer um n fora deste valor, alguns cluster ficarão sem alguns nodos.
+        Por isso que no código é feita a seguinte verificação, se o elemento pertencente
+        a C i,s é maior que n, então (i) nem vai chegar a testar este elemento.
+        Esta linha que faz isso
+
+            /* se o nodo de C i,s existe */
+            if (nodes->nodes[j] < n){
+
+    2.2 - Quando um nodo qualquer (j) vai ser testado por outro (i), o testador checa
+    no seu timestamp, se na posição j existe o valor -1, onde -1 significa que o i
+    ainda não tem nenhuma informação sobre j. No caso de ser -1 e i testou j como
+    falho, i coloca 1, senão coloca 0.
+    Esta linha que verifica isso
+
+        /* se primeira vez que seta o timestamp de i na posição j */
+        if (nodo[token].timestamp[nodes->nodes[j]] == -1 )
+
+    2.3 Quando j é testado e não está falho, i deve atualizar o seu timestamp
+    baseando-se pelo timestamp de j. Essa atualização é feita com um percorrimento
+    completo dos dois timestamp de i e j, sendo que i só atualiza o seu timestamp
+    quando a valor que estiver no timesmtap de j for maior que o seu.
+    Abaixo deste comentário esta código que faz isso no temp.c
+
+        /* atualiza o timestamp de i com base no timestamp de j */
+
+    2.4 - A parte de impressão do LOG, segue o mesmo esquema do trabalho 1
+
+        2.4.1 - Na impressão do log é feita duas verficações:
+
+            2.4.1.1 - "if (num_cluster != nodo[token].cluster)". Esta checagem é feita somente para imprimir
+            em qual cluster que o teste está sendo executado.
+            "num_cluster" checa se os nodos mudaram de cluster ou não.
+            "nodo[token].cluster" é o cluster que o nodo esta em um determinado momento.
+
+            2.4.1.2 - "if (nodes->nodes[j] < n)". Esta checagem é necessária, pois em casos que o número
+            de nodos existentes não for potência de dois, um nodo pode estar testando um nodo
+            que não existe. Por exemplo: Um sistema com 7 nodos, o nodo 3 no cluster 3, iria
+            testar o nodo 7, no entanto o nodo 7 não existe.
+
+    2.5 - O mesmo é válido para determinar o próximo escalonamento.
+
+        2.5.1 - Determinando próximo escalonamento:
+
+            2.5.1.1 - "if ( nodo[token].cluster < max_cluster )". Se o nodo ainda não chegou no último
+            cluster ele é escalonado com o tempo zero, pois o teste do próximo cluster deve ser
+            feito nesta mesma rodada.
+            2.5..12 - Caso esteja no último cluster a ser testado, ele é escalonado para um tempo que não
+            seja zero, pois ele não pode executar o teste do primeiro cluster nesta mesma rodada.
+
+3 - LOGs:
+
+    Os logs da execução do programa estão na página, logo acima do relátorio.
+    Na resposta de a) foi considerado a latência, como a quantidade de rodadas que todos os nodos
+    demoravam para descobrir o novo evento.
+    Na resposta de b) foi considerado a quantidade de testes
+    incluindo os testes em nodos com falha, ou seja, no caso do nodo 1 testar 3 com falha e depois
+    testar o nodo 2 sem falha, foi considerado como 2 testes.
+
+    OBs: Do LOG test 1 até o LOG test 2, forma os mesmo do trabalho 1.
+    Resolvemos aplicar os testes desta forma, pois assim poderiamos ver a diferença entre os
+    algoritmos do primeiro trabalho e algoritmo do segundo trabalho.
+
+4 - Observações Gerais:
+
+* Para quantidade de nodos diferente de potências de 2, foi determinadopara a
+quantidade de clusters o teto de lg N, sendo N a quantidade de nodos para a simulação.
+
+* Para a mesma situação acima, houve um pequeno problema com relação a impressão
+do log, mais especificamente quando o nodo não testa ninguém. Neste caso o mais
+intuitivo seria não imprimir o nodo, no entanto, no algoritmo implementado a
+impressão do log é a última ação tomada, com isso mesmo que o nodo não
+teste ninguém ele acaba sendo imprimido, mais sem nada no vetor de
+nodos testados.
+
+( Observação não cabe no contexto do algoritmo, pois não podem ocorrer
+mudanças durante um diagnostico )
+* Continuando no assunto da quantidade de nodos diferentes potência de 2, houve
+um problema com o calculo da latência, pois por exemplo no caso de existirem
+somente 3 nodos, neste caso no cluster 1, 0 testa 1 e 1 testa 0, o 2 não testa
+ninguém pois o 3 não existe, no cluster 2 0 testa 2 e 2 testa 0, 1 não testa
+ninguém, pois ele só testaria o 2 se o 0 estivesse falho. Perceba que se
+o nodo 2 tivesse falhado o 1 só iria desocobrir quando testar o nodo na
+próxima rodada de testes, no entanto se ocorrer alguma mudança entre as
+duas rodadas de testes no nodo 2, e assim essas mudanças irem
+sucessivamente ocorrendo, o sistema nunca irá conseguir terminar o diagnostico.
+
+* Para a incialização do vetor timestamp, foi determinado que todoas as posições
+recebm valor -1, que indica que não se sabe o estado do nodo, somente para sua
+própia posição oue é setado o valor 0, que indica que o nodo está sem falha.
+
+* Para garantir que todos os testes de todos os cluster fossem executados em uma única
+rodada, foi utlizada a seguinte condição, enquanto não chegar no último cluster
+o escalonamento do nodo era de zero, e ia para o próximo cluster, caso contrário, fosse
+o último cluster, o nodo era escalonado para 30 e voltava ao cluster 1.
